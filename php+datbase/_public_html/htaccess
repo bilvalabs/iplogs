@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect index.html to index.php if it exists
+RewriteRule ^index\.html$ index.php [L]
+
+# If a file or directory does not exist, rewrite to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
